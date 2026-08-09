@@ -234,12 +234,10 @@ h4 {
 }
 
 .mockup-stats-grid {
-    display: flex;
-    gap: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
     margin-bottom: 1rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding-bottom: 4px;
 }
 
 .mockup-stats-grid::-webkit-scrollbar {
@@ -248,20 +246,24 @@ h4 {
 
 .mockup-stat-card {
     background: #fcfcfc;
-    padding: 1rem;
-    border-radius: 16px;
+    padding: 0.75rem 0.5rem;
+    border-radius: 12px;
     border: 1px solid var(--border-light);
-    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .mockup-stat-label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: var(--text-secondary);
     margin-bottom: 0.25rem;
+    white-space: nowrap;
 }
 
 .mockup-stat-value {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
 }
