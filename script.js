@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
     
     // Select elements to reveal
-    const revealElements = document.querySelectorAll('.feature-card, .cta-box, .section-header');
+    const revealElements = document.querySelectorAll('.feature-card, .cta-box, .section-header, .hero-visual');
     revealElements.forEach(el => {
         el.classList.add('reveal-on-scroll');
         observer.observe(el);

@@ -188,6 +188,17 @@ h4 {
 
 .hero-visual {
     width: 100%;
+    margin-top: 15vh; /* Push dashboard below fold on mobile */
+    opacity: 0;
+    transform: translateY(100px) scale(0.9) rotateX(10deg);
+    filter: blur(10px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-visual.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0);
 }
 
 /* --- 8. DASHBOARD MOCKUP (MOBILE 'VIDEO' LAYOUT) --- */
@@ -460,6 +471,11 @@ h4 {
 
     .hero-visual {
         flex: 1;
+        margin-top: 0; /* Reset for desktop */
+        opacity: 1; /* Reset for desktop */
+        transform: none; /* Reset for desktop */
+        filter: none; /* Reset for desktop */
+        transition: none; /* Let desktop hover handle transitions */
     }
 
     .hero-title {
