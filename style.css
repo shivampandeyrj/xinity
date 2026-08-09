@@ -200,8 +200,7 @@ h4 {
     position: relative;
     display: flex;
     flex-direction: column;
-    /* Cinematic Video Layout */
-    aspect-ratio: 16/9;
+    /* Cinematic Video Layout Removed */
     height: auto;
     max-height: none;
     color: var(--text-primary);
