@@ -90,7 +90,7 @@ h1, h2, h3, h4 {
 
 .header-logo {
     height: auto;
-    width: 110px;
+    width: 95px;
 }
 
 .nav-links {
@@ -368,7 +368,7 @@ h1, h2, h3, h4 {
     }
     .header-logo {
         height: auto;
-        width: 130px;
+        width: 115px;
     }
     .nav-links {
         display: flex;
