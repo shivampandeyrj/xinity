@@ -564,7 +564,11 @@ a {
         font-size: 0.75rem;
         border-radius: 99px;
         white-space: nowrap;
-        flex-shrink: 0;
+        flex-shrink: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
     }
     
     /* 2. Hero Section Refinements */
@@ -587,13 +591,20 @@ a {
         flex-direction: column;
         gap: 12px;
         padding: 0 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
     }
     .stagger-3 .btn {
         width: 100%;
         justify-content: center;
-        height: 56px; /* Premium touch target */
+        height: 56px;
         border-radius: 16px;
-        font-size: 1.05rem;
+        font-size: 1rem;
+        padding: 0 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     /* 3. General Sections */
@@ -615,7 +626,10 @@ a {
         height: auto;
         border-radius: 28px;
         background: #f4f5f7;
-        margin: 0 1rem; /* Inset on mobile */
+        margin: 0 1rem;
+        overflow: hidden;
+        max-width: calc(100vw - 2rem);
+        box-sizing: border-box;
     }
     .mockup-sidebar {
         width: auto;
@@ -640,10 +654,15 @@ a {
     .mockup-nav-item {
         flex: 1;
         justify-content: center;
-        padding: 0.5rem;
-        font-size: 0.75rem;
+        padding: 0.5rem 0.2rem;
+        font-size: 0.7rem;
         border-radius: 99px;
         margin: 0;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
     }
     .mockup-nav-item.active {
         background: white;
