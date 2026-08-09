@@ -188,6 +188,9 @@ h1, h2, h3, h4 {
     overflow: hidden;
     border: 1px solid var(--border-light);
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .mockup-sidebar {
@@ -219,7 +222,8 @@ h1, h2, h3, h4 {
 }
 
 .mockup-main {
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
+    overflow-y: hidden;
 }
 
 .mockup-stats-grid {
@@ -419,6 +423,7 @@ h1, h2, h3, h4 {
         flex-direction: row;
         display: flex;
         height: 480px;
+        max-height: none;
     }
     .mockup-sidebar {
         flex-direction: column;
@@ -530,7 +535,7 @@ h1, h2, h3, h4 {
     transform: translateY(30px);
     transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
-.reveal-on-scroll.visible {
+.reveal-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
