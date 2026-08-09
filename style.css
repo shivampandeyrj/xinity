@@ -181,6 +181,10 @@ h1, h2, h3, h4 {
     gap: 12px !important;
 }
 
+.hero-visual {
+    display: none; /* Hidden on mobile per request */
+}
+
 /* --- 8. DASHBOARD MOCKUP (MOBILE 'VIDEO' LAYOUT) --- */
 .mockup-wrapper {
     background: #0B0C10;
@@ -327,7 +331,7 @@ h1, h2, h3, h4 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
 }
-.feature-grid, .solutions-grid {
+.feature-grid, .features-grid, .solutions-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -338,6 +342,12 @@ h1, h2, h3, h4 {
     border-radius: 24px;
     border: 1px solid var(--border-light);
     box-shadow: 0 12px 32px rgba(0,0,0,0.03);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+.feature-card:hover, .solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+    border-color: rgba(0,0,0,0.1);
 }
 .feature-icon, .solution-icon {
     font-size: 2rem;
@@ -440,6 +450,7 @@ h1, h2, h3, h4 {
     }
     .hero-visual {
         flex: 1;
+        display: flex; /* Show on desktop */
     }
     .hero-title {
         font-size: 4rem;
@@ -571,7 +582,7 @@ h1, h2, h3, h4 {
     }
 
     /* Grids */
-    .feature-grid {
+    .feature-grid, .features-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     .solutions-grid {
