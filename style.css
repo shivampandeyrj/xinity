@@ -89,8 +89,8 @@ h1, h2, h3, h4 {
 }
 
 .header-logo {
-    height: 24px;
-    width: auto;
+    height: auto;
+    width: 110px;
 }
 
 .nav-links {
@@ -330,7 +330,8 @@ h1, h2, h3, h4 {
     gap: 2.5rem;
 }
 .footer-logo-img {
-    height: 32px;
+    height: auto;
+    width: 85px;
     margin-bottom: 1rem;
 }
 .footer-col h4 {
@@ -366,7 +367,8 @@ h1, h2, h3, h4 {
         padding: 12px 24px;
     }
     .header-logo {
-        height: 32px;
+        height: auto;
+        width: 130px;
     }
     .nav-links {
         display: flex;
@@ -440,6 +442,10 @@ h1, h2, h3, h4 {
         flex: 1;
         padding: 2.5rem;
         overflow-y: auto;
+        scrollbar-width: none;
+    }
+    .mockup-main::-webkit-scrollbar {
+        display: none;
     }
     .mockup-stats-grid {
         flex-direction: row;
