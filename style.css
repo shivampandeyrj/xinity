@@ -24,6 +24,11 @@
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-main);
@@ -530,18 +535,21 @@ a {
     .nav-container {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(24px) saturate(200%);
         -webkit-backdrop-filter: blur(24px) saturate(200%);
         border-radius: 99px;
-        padding: 8px 8px 8px 20px;
+        padding: 6px 6px 6px 16px;
         box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.05);
         border: 1px solid rgba(255,255,255,0.6);
         max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
     .header-logo {
-        height: 36px;
-        max-width: 140px;
+        height: 28px;
+        max-width: 120px;
         object-fit: contain;
     }
     .nav-links {
@@ -551,9 +559,10 @@ a {
         display: none;
     }
     .nav-actions .btn-primary {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 8px 16px;
+        font-size: 0.85rem;
         border-radius: 99px;
+        white-space: nowrap;
     }
     
     /* 2. Hero Section Refinements */
