@@ -221,42 +221,10 @@ h4 {
     display: none !important;
 }
 
-padding: 0.75rem 1rem;
-background: rgba(0, 0, 0, 0.4);
-border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-backdrop-filter: blur(10px);
-overflow-x: auto;
-scrollbar-width: none;
-gap: 0.5rem;
-}
 
-.mockup-sidebar::-webkit-scrollbar {
-    display: none;
-}
-
-.mockup-sidebar-logo {
-    display: none;
-}
-
-.mockup-nav-item {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.5);
-    border-radius: 99px;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.mockup-nav-item.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
 
 .mockup-main {
-    padding: 1rem;
+    padding: 1rem 0.75rem;
     overflow-y: hidden;
     flex: 1;
     display: flex;
@@ -306,7 +274,7 @@ gap: 0.5rem;
 
 .mockup-table-row {
     background: #fcfcfc;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem;
     border-radius: 12px;
     border: 1px solid var(--border-light);
     display: flex;
@@ -321,18 +289,15 @@ gap: 0.5rem;
 .mockup-col {
     font-size: 0.8rem;
     color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
 }
-
-.mockup-col:nth-child(2) {
-    color: var(--text-secondary);
-    font-size: 0.75rem;
-}
-
+.mockup-col:nth-child(2) { color: var(--text-secondary); font-size: 0.75rem; }
 .mockup-col:nth-child(3)::before {
     content: attr(data-mobile-label);
     font-weight: 600;
     color: var(--text-secondary);
-    margin-right: 4px;
+    margin-right: auto;
 }
 
 /* --- 9. SECTIONS (FEATURES/SOLUTIONS) --- */
@@ -633,6 +598,7 @@ gap: 0.5rem;
     .mockup-col {
         flex: 1;
         font-size: 0.95rem;
+        display: block;
     }
 
     .mockup-col:nth-child(2) {
