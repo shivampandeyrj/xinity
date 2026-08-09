@@ -204,7 +204,7 @@ h1, h2, h3, h4 {
                       radial-gradient(circle at bottom left, rgba(74, 150, 255, 0.1), transparent 40%);
 }
 
-.mockup-wrapper::before {
+.mockup-wrapper::after {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -214,7 +214,8 @@ h1, h2, h3, h4 {
 }
 
 .mockup-sidebar {
-    display: flex;
+    display: none !important;
+}
     padding: 0.75rem 1rem;
     background: rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -480,23 +481,21 @@ h1, h2, h3, h4 {
     }
     
     /* macOS Window Controls */
-    .mockup-sidebar::before {
+    .mockup-wrapper::before {
         content: '';
         display: block;
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
         width: 12px; height: 12px;
         border-radius: 50%;
         background: #FF5F56;
         box-shadow: 20px 0 0 #FFBD2E, 40px 0 0 #27C93F;
-        margin-bottom: 2rem;
+        z-index: 20;
     }
 
-    .mockup-sidebar {
-        flex-direction: column;
-        width: 240px;
-        padding: 1.5rem;
-        background: rgba(0,0,0,0.2);
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
-        border-bottom: none;
+    .mockup-main {
+        padding-top: 4rem; /* Make room for macOS controls */
     }
     .mockup-sidebar-logo {
         display: block;
