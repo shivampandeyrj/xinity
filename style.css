@@ -187,11 +187,11 @@ h1, h2, h3, h4 {
 
 /* --- 8. DASHBOARD MOCKUP (MOBILE 'VIDEO' LAYOUT) --- */
 .mockup-wrapper {
-    background: #0B0C10;
+    background: #ffffff;
     border-radius: 24px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02) inset;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -199,9 +199,7 @@ h1, h2, h3, h4 {
     aspect-ratio: 16/9;
     height: auto;
     max-height: none;
-    color: #fff;
-    background-image: radial-gradient(circle at top right, rgba(120, 119, 198, 0.15), transparent 40%),
-                      radial-gradient(circle at bottom left, rgba(74, 150, 255, 0.1), transparent 40%);
+    color: var(--text-primary);
 }
 
 .mockup-wrapper::after {
@@ -209,20 +207,12 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
     z-index: 10;
 }
 
 .mockup-sidebar {
     display: none !important;
-}
-    padding: 0.75rem 1rem;
-    background: rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    overflow-x: auto;
-    scrollbar-width: none;
-    gap: 0.5rem;
 }
 .mockup-sidebar::-webkit-scrollbar { display: none; }
 
@@ -242,9 +232,9 @@ h1, h2, h3, h4 {
 }
 
 .mockup-nav-item.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #f4f5f7;
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
 }
 
 .mockup-main {
@@ -268,24 +258,23 @@ h1, h2, h3, h4 {
 .mockup-stats-grid::-webkit-scrollbar { display: none; }
 
 .mockup-stat-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: #fcfcfc;
     padding: 1rem;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
     min-width: 120px;
-    backdrop-filter: blur(5px);
 }
 
 .mockup-stat-label {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-secondary);
     margin-bottom: 0.25rem;
 }
 
 .mockup-stat-value {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .mockup-table {
@@ -295,10 +284,10 @@ h1, h2, h3, h4 {
 }
 
 .mockup-table-row {
-    background: rgba(255, 255, 255, 0.02);
+    background: #fcfcfc;
     padding: 0.75rem 1rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -310,13 +299,13 @@ h1, h2, h3, h4 {
 
 .mockup-col {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-primary);
 }
-.mockup-col:nth-child(2) { color: rgba(255, 255, 255, 0.5); font-size: 0.75rem; }
+.mockup-col:nth-child(2) { color: var(--text-secondary); font-size: 0.75rem; }
 .mockup-col:nth-child(3)::before {
     content: attr(data-mobile-label);
     font-weight: 600;
-    color: rgba(255,255,255,0.4);
+    color: var(--text-secondary);
     margin-right: 4px;
 }
 
@@ -473,7 +462,7 @@ h1, h2, h3, h4 {
         transform: perspective(1200px) rotateY(-8deg) rotateX(4deg);
         transform-origin: center right;
         transition: transform 0.5s var(--ease-out);
-        box-shadow: -20px 40px 80px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1) inset;
+        box-shadow: -20px 40px 80px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05) inset;
     }
     
     .mockup-wrapper:hover {
@@ -495,28 +484,12 @@ h1, h2, h3, h4 {
     }
 
     .mockup-main {
-        padding-top: 4rem; /* Make room for macOS controls */
-    }
-    .mockup-sidebar-logo {
-        display: block;
-        font-weight: 800;
-        font-size: 0.75rem;
-        letter-spacing: 0.15em;
-        margin-bottom: 2.5rem;
-        color: rgba(255, 255, 255, 0.4);
-    }
-    .mockup-nav-item {
-        margin-bottom: 0.5rem;
-        padding: 0.75rem 1rem;
-        font-size: 0.85rem;
-    }
-    .mockup-main {
         flex: 1;
-        padding: 3rem;
+        padding: 4rem 3rem 3rem 3rem; /* Make room for macOS controls */
         overflow-y: auto;
         scrollbar-width: none;
         justify-content: flex-start;
-        background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.03)"/></svg>');
+        background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="rgba(0,0,0,0.03)"/></svg>');
     }
     .mockup-main::-webkit-scrollbar {
         display: none;
@@ -540,9 +513,9 @@ h1, h2, h3, h4 {
     .mockup-table {
         gap: 0;
         border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-light);
         overflow: hidden;
-        background: rgba(0,0,0,0.2);
+        background: rgba(255,255,255,0.8);
         backdrop-filter: blur(10px);
     }
     .mockup-table-row {
@@ -550,25 +523,25 @@ h1, h2, h3, h4 {
         align-items: center;
         padding: 1.25rem 1.5rem;
         border: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid var(--border-light);
         border-radius: 0;
         background: transparent;
         transition: background 0.2s ease;
     }
     .mockup-table-row:hover:not(.header) {
-        background: rgba(255, 255, 255, 0.03);
+        background: #f9f9f9;
     }
     .mockup-table-row:last-child {
         border-bottom: none;
     }
     .mockup-table-row.header {
         display: flex;
-        background: rgba(0,0,0,0.4);
+        background: #f4f5f7;
         font-weight: 600;
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        color: rgba(255, 255, 255, 0.4);
+        color: var(--text-secondary);
     }
     .mockup-col {
         flex: 1;
