@@ -139,4 +139,34 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('reveal-on-scroll');
         observer.observe(el);
     });
+
+    // 3. Background Blue Sparks Effect
+    function createSpark() {
+        if (document.hidden) return; // Prevent spawning when tab is inactive
+        
+        const spark = document.createElement('div');
+        spark.classList.add('spark');
+        spark.textContent = 'x'; // The requested 'x' shape
+        
+        spark.style.left = Math.random() * 100 + 'vw';
+        spark.style.top = Math.random() * 100 + 'vh';
+        
+        // Randomize duration between 2s and 4s
+        const duration = 2 + Math.random() * 2;
+        spark.style.animationDuration = duration + 's';
+        
+        // Randomize size slightly
+        const scale = 0.5 + Math.random();
+        spark.style.fontSize = (14 * scale) + 'px';
+        
+        document.body.appendChild(spark);
+        
+        // Cleanup after animation
+        setTimeout(() => {
+            if(spark.parentNode) spark.parentNode.removeChild(spark);
+        }, duration * 1000);
+    }
+    
+    // Spawn a new spark every 500ms
+    setInterval(createSpark, 500);
 });
