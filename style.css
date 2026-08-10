@@ -39,8 +39,13 @@ body {
 }
 
 body {
-    /* Clean minimalistic background */
-    background: none;
+    /* Classy and minimalistic grid background */
+    background-color: var(--bg-main);
+    background-image: 
+        radial-gradient(circle at top center, rgba(0, 0, 0, 0.04) 0%, transparent 80%),
+        radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px;
+    background-attachment: fixed;
 }
 
 a {
