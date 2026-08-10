@@ -440,9 +440,27 @@ h4 {
 
     .nav-links {
         display: flex;
-        gap: 2.5rem;
+        gap: 1rem;
         font-size: 0.95rem;
         font-weight: 500;
+    }
+
+    .nav-links a {
+        padding: 8px 18px;
+        border-radius: 99px;
+        transition: all 0.2s ease;
+        color: var(--text-secondary);
+    }
+
+    .nav-links a:hover {
+        color: var(--text-primary);
+        background: rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-links a.active {
+        background: white;
+        color: var(--text-primary);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .nav-actions .btn-secondary {
