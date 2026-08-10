@@ -39,9 +39,8 @@ body {
 }
 
 body {
-    /* Subtle dot grid background */
-    background-image: radial-gradient(var(--border-light) 1px, transparent 1px);
-    background-size: 32px 32px;
+    /* Clean minimalistic background */
+    background: none;
 }
 
 a {
