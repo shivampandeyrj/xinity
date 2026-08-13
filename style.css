@@ -854,4 +854,21 @@ body::after {
 .tilt-inner {
     transform: translateZ(30px);
     pointer-events: none;
+}
+
+.event-logo-link {
+    display: inline-block;
+}
+
+.event-logo {
+    max-height: 100px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.event-logo-link:hover .event-logo {
+    transform: scale(1.1) translateY(-8px);
+    filter: drop-shadow(0 20px 30px rgba(79, 70, 229, 0.2));
 }}
