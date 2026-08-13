@@ -811,6 +811,7 @@ body::after {
     100% {
         transform: translate(-5%, -5%) scale(0.95);
     }
+}
 
 /* --- HACK2SKILL VIBRANT ENHANCEMENTS --- */
 .text-gradient {
