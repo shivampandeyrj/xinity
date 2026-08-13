@@ -811,4 +811,46 @@ body::after {
     100% {
         transform: translate(-5%, -5%) scale(0.95);
     }
+
+/* --- HACK2SKILL VIBRANT ENHANCEMENTS --- */
+.text-gradient {
+    background: linear-gradient(135deg, #4F46E5, #06B6D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
+
+.glow-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none !important;
+    background: linear-gradient(135deg, #4F46E5, #06B6D4) !important;
+    color: white !important;
+}
+
+.glow-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #4F46E5);
+    z-index: -1;
+    border-radius: inherit;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glow-btn:hover::before {
+    opacity: 0.8;
+}
+
+.tilt-card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.tilt-inner {
+    transform: translateZ(30px);
+    pointer-events: none;
+}}

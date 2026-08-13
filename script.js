@@ -139,4 +139,62 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('reveal-on-scroll');
         observer.observe(el);
     });
+
+    // 3. Counter Animation for Stats
+    const statsContainer = document.getElementById('stats-container');
+    if (statsContainer) {
+        const statObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    const speed = 200; // lower is slower
+                    
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const suffix = counter.getAttribute('data-suffix') || '';
+                        
+                        const updateCount = () => {
+                            const current = +counter.innerText.replace(suffix, '');
+                            const inc = target / speed;
+                            
+                            if (current < target) {
+                                counter.innerText = Math.ceil(current + inc) + suffix;
+                                setTimeout(updateCount, 20);
+                            } else {
+                                counter.innerText = target + suffix;
+                            }
+                        };
+                        updateCount();
+                    });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statObserver.observe(statsContainer);
+    }
+
+    // 4. 3D Tilt Effect on Feature Cards
+    const cards = document.querySelectorAll('.feature-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -10; // Max 10 deg
+            const rotateY = ((x - centerX) / centerX) * 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
+            card.style.transition = 'none';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)`;
+            card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        });
+    });
 });
